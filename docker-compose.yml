@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   nginx:
+    container_name: nginx
     image: nginx
     ports:
       - '80:80'
@@ -11,6 +12,7 @@ services:
     restart: always
 
   ntp:
+    container_name: ntp
     image: cturra/ntp
     ports:
       - '123:123/udp'
@@ -19,6 +21,7 @@ services:
     restart: always
   
   samba:
+    container_name: samba
     image: dperson/samba
     ports:
       - "137:137/udp"
