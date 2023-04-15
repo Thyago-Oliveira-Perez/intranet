@@ -39,14 +39,14 @@ services:
     ports:
       - "137:137/udp"
       - "138:138/udp"
-      - "139:139/tcp"
-      - "445:445/tcp"
+      - "139:139"
+      - "445:445"
     volumes:
-      - /~/samba/share:/mount
+      - ./samba:/mount
     environment:
-      - SMB_USER=smbDocker
-      - SMB_PASSWORD=1234
-      - SMB_SHARE_NAME=share
+      - USERID=1000
+      - GROUPID=1000
+    command: -s "Public;/mount;yes;no;yes;all;none;none"
     restart: always
     networks:
       lan_network:
