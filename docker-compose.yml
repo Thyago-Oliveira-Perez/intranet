@@ -1,7 +1,7 @@
 version: '3.3'
 
 networks:
-  intranet:
+  lan_network:
     driver: bridge
     ipam:
       config:
@@ -18,7 +18,7 @@ services:
       - ./html:/usr/share/nginx/html
     restart: always
     networks:
-      intranet:
+      lan_network:
         ipv4_address: 172.18.0.2
 
   ntp:
@@ -30,7 +30,7 @@ services:
       - TZ=America/Sao_Paulo
     restart: always
     networks:
-      intranet:
+      lan_network:
         ipv4_address: 172.18.0.3
   
   samba:
@@ -49,5 +49,5 @@ services:
       - SMB_SHARE_NAME=share
     restart: always
     networks:
-      intranet:
+      lan_network:
         ipv4_address: 172.18.0.4
