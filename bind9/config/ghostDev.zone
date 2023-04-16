@@ -1,0 +1,22 @@
+$TTL 2d
+
+$ORIGIN ghostDev.ua.
+
+@           IN      SOA     ns.ghostDev.ua. info. (
+                            2023041800 ; serial
+                            12h        ; refresh
+                            15m        ; retry
+                            3w         ; expire
+                            2h         ; minimun ttl
+                            )
+
+            IN      NS      ns.ghostDev.ua.
+
+ns          IN      A       172.18.0.6
+
+; -- dns records
+
+nginxDocker IN      A       172.18.0.2
+ntpDocker   IN      A       172.18.0.3
+sambaDocker IN      A       172.18.0.4
+sshDocker   IN      A       172.18.0.5
