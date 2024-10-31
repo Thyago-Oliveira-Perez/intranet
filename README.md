@@ -1,4 +1,4 @@
-Project used to simulate a intranet using docker
+Projeto usado para simular uma intranet usando docker
 
 ###
 
